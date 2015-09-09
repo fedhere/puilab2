@@ -1,4 +1,9 @@
-import sys
+import fileinput
+
 if __name__=='__main__':
-    print 'Received inputs for [%s]' % ','.join(sys.argv[1:])
-    print 'This is the default branch, please use branch "median" instead.'
+    myList = []
+    for line in fileinput.input():
+        number = int(line.strip())
+        myList.append(number)
+    myList.sort()
+    print myList[len(myList)/2]
